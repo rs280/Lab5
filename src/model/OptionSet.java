@@ -55,9 +55,7 @@ public class OptionSet implements java.io.Serializable {
                     optionObject = optionList.get(i);
                 }
             } catch (NullPointerException e) {
-                /* According to Carnegie Mellon University Software Engineering Institute You
-                 * should not catch a null pointer exception. BUT WE WILL FOR THE SAKE OF THE
-                 * ASSIGNMENT! */
+               
                 break;
             }
         }
@@ -78,9 +76,7 @@ public class OptionSet implements java.io.Serializable {
                     break;
                 }
             } catch (NullPointerException e) {
-                /* According to Carnegie Mellon University Software Engineering Institute You
-                 * should not catch a null pointer exception. BUT WE WILL FOR THE SAKE OF THE
-                 * ASSIGNMENT! */
+                
                 break;
             }
         }
