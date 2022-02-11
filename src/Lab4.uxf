@@ -1,0 +1,142 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;260&lt;/x&gt;&lt;y&gt;110&lt;/y&gt;&lt;w&gt;160&lt;/w&gt;&lt;h&gt;30&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;lt=&amp;lt;&amp;lt;-&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;140;10&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;260&lt;/x&gt;&lt;y&gt;110&lt;/y&gt;&lt;w&gt;160&lt;/w&gt;&lt;h&gt;30&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;lt=&amp;lt;&amp;lt;-&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;140;10&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;260&lt;/x&gt;&lt;y&gt;110&lt;/y&gt;&lt;w&gt;160&lt;/w&gt;&lt;h&gt;30&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;lt=&amp;lt;&amp;lt;-&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;140;10&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;260&lt;/x&gt;&lt;y&gt;110&lt;/y&gt;&lt;w&gt;160&lt;/w&gt;&lt;h&gt;30&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;lt=&amp;lt;&amp;lt;-&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;140;10&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;260&lt;/x&gt;&lt;y&gt;110&lt;/y&gt;&lt;w&gt;160&lt;/w&gt;&lt;h&gt;30&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;lt=&amp;lt;&amp;lt;-&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;140;10&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;&lt;diagram program="umletino" version="14.4.0-SNAPSHOT"&gt;&lt;zoom_level&gt;10&lt;/zoom_level&gt;&lt;element&gt;&lt;id&gt;Relation&lt;/id&gt;&lt;coordinates&gt;&lt;x&gt;260&lt;/x&gt;&lt;y&gt;110&lt;/y&gt;&lt;w&gt;160&lt;/w&gt;&lt;h&gt;30&lt;/h&gt;&lt;/coordinates&gt;&lt;panel_attributes&gt;lt=&amp;lt;&amp;lt;-&lt;/panel_attributes&gt;&lt;additional_attributes&gt;10;10;140;10&lt;/additional_attributes&gt;&lt;/element&gt;&lt;/diagram&gt;Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>223</x><y>50</y><w>120</w><h>50</h></coordinates><panel_attributes>UML Class Diagram 
+Lab 4
+Rishabh Sahoo
+Car Rental Application</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>362</x><y>0</y><w>210</w><h>50</h></coordinates><panel_attributes>Car Rental Application::Driver
+--
+--
+main(String[] args</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>433</x><y>43</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>363</x><y>83</y><w>210</w><h>40</h></coordinates><panel_attributes>adapter::CreateAuto
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>423</x><y>113</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>183</x><y>173</y><w>600</w><h>210</h></coordinates><panel_attributes>adapter.ProxyAutomobile
+--
+model.AutomobileTable automobileTable; 
+util.FileIO autoutil;
+--
+ProxyAutomobile()
+boolean updateOptionSetName(String automobileKey, String optionSetName, String nameNew)
+boolean updateOptionPrice(String automobileKey, String optionSetName, String optionName, double priceNew) String buildAuto(String filename)
+boolean printAuto(String automobileKey)
+boolean serialize(String automobileKey, String fileName)
+String deserialize(String fileName)
+boolean setOptionChoice(String automobileKey, String optionSetName, String optionName)
+public String getOptionChoice(String automobileKey, String optionSetName)
+public Double getOptionChoicePrice(String automobileKey, String optionSetName)
+public void operation(int operationNumber, String[] inputArguments)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>763</x><y>400</y><w>440</w><h>190</h></coordinates><panel_attributes>model.AutomobileTable
+--
+Map&lt;String, Automobile&gt; automobileTable
+--
+AutomobileTable()
+AutomobileTable(int capacitySize)
+Automobile getByKey(String automobileKey)
+String getKey(Automobile automobileObject)
+String insertOverwrite(Automobile automobileObject 
+String insertWrapper(Automobile automobileObject)
+ boolean insert(String automobileKey,Automobile automobileObject) 
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>420</y><w>570</w><h>120</h></coordinates><panel_attributes>util.FileIO
+--
+--
+void read(String fileName, Automobile autoObj)
+boolean optionSetOptionsProcess(Automobile autoObj, int optionSetObjectIndex, String optionSetOptions) 
+void serialize(String fileName, Automobile autoObj)
+Automobile deserialize(String fileName)
+void print()
+String toString()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>63</x><y>650</y><w>230</w><h>120</h></coordinates><panel_attributes>exception.AutoException
+--
+Map&lt;Integer, String&gt; errorMessageTable;
+int errorNumber;
+String errorMessage;
+model.Automobile automobileObject;
+--
+AutoException(int errorNumber_) 
+String fixString(int errorNumber)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>820</y><w>290</w><h>50</h></coordinates><panel_attributes>exception.FixAutomobileTable
+--
+--
+String code500(model.Automobile automobileObject)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>910</y><w>130</w><h>80</h></coordinates><panel_attributes>exception.Log
+--
+PrintWriter writer
+--
+void error(String str) 
+void warning(String str)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>640</y><w>560</w><h>620</h></coordinates><panel_attributes>model.Automobile
+--
+static final long serialVersionUID 
+String makeName
+String modelName
+String year
+double basePrice
+ArrayList&lt;OptionSet&gt; optionSetList 
+ArrayList&lt;Integer&gt; optionSetOptionChoice 
+ArrayList&lt;String&gt; optionSetNameReserved
+--
+Automobile()
+Automobile(int size)
+void init()
+String getMake()
+String getModel()
+String getYear()
+double getPrice()
+OptionSet getOptionSet(int OptionSetIndex)
+int length()
+String getOptionSetChoiceName(String optionSetName)
+Double getOptionSetChoicePrice(String optionSetName)
+OptionSet.Option getOptionSetChoiceByIndex(int optionSetIndex)
+String getOptionSetOptionName(String optionSetName, String optionName)
+Double getOptionSetOptionPrice(String optionSetName, String optionName)
+boolean isOptionSetReserved(OptionSet optionSetObject)
+boolean isOptionSetNameReserved(String optionSetName)
+OptionSet findOptionSet(String optionSetName)
+OptionSet.Option findOptionSetOption(int OptionSetIndex, String optionName)
+int findOptionSetIndex(String optionSetName)
+int findOptionSetOptionIndex(int OptionSetIndex, String optionName)
+int addOptionSet(String OptionSetName)
+int addOptionSetOption(int optionSetIndex, String optionName, double optionPrice)
+void setMake(String name)
+void setModel(String name)
+void setYear(String name)
+void setPrice(double price_)
+boolean setOptionSetName(String optionSetName, String nameNew)
+boolean setOptionSetOptionNameReserved(String optionSetName, String optionName) boolean setOptionSetOptionName(String optionSetName, String optionName, String nameNew) boolean setOptionSetOptionPrice(String optionSetName, String optionName, double priceNew) boolean setOptionSetChoiceByIndex(int optionSetIndex, int optionIndex)
+boolean setOptionSetChoice(String optionSetName, String optionName)
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>970</x><y>670</y><w>300</w><h>240</h></coordinates><panel_attributes>model.Automobile.OptionSet
+--
+static final long serialVersionUID 
+ArrayList&lt;Option&gt; optionList
+ String optionSetName
+--
+ptionSet()
+OptionSet(String name, int size)
+void init()
+String getName()
+Option getOption(int optionIndex)
+int length()
+Option findOption(String optionName)
+int findOptionIndex(String optionName) 
+void setName(String name)
+int addOption(String optionName, double optionPrice)
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>990</x><y>990</y><w>210</w><h>200</h></coordinates><panel_attributes>model.Automobile.OptionSet.Option
+--
+static final long serialVersionUID 
+String optionName
+double price
+--
+Option()
+Option(String name, double price_) 
+String getName()
+double getPrice()
+void setName(String name)
+void setPrice(double price_)
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>370</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>370</y><w>90</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>70;30;10;13</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>370</y><w>80</w><h>290</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;270;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>921</x><y>757</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1101</x><y>899</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>707</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>757</y><w>50</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>30;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>757</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>532</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>532</y><w>40</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;100;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1240</x><y>400</y><w>680</w><h>190</h></coordinates><panel_attributes>scale.EditOptions extends Thread
+--
+String automobileKey
+String optionSetName
+String optionName
+String optionNameNew
+int operationNumber
+int threadNumber adapter.ProxyAutomobile proxyAutomobile String[] inputArguments
+--
+EditOptions(adapter.ProxyAutomobile proxyAutomobile_, int operationNumber_, int threadNumber_, String[] inputArguments_) 
+void run()</panel_attributes><additional_attributes></additional_attributes></element></diagram>
