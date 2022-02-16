@@ -1,11 +1,10 @@
 package adapter;
 
-public interface BuildAuto {
-	public String buildAuto(String filename);
+/** Assignment 4: we have added the scale package
+ * which contains an interface scale.Scaleable <BR>
+ * Assignment 5: we have added the server package
+ * which contains an interface server.AutoServer */
+public class BuildAuto extends ProxyAutomobile
+	implements CreateAuto, UpdateAuto, ChooseAuto, scale.Scaleable, server.AutoServer {
 
-	public boolean printAuto(String automobileKey);
-
-	public boolean serialize(String automobileKey, String fileName);
-
-	public String deserialize(String fileName);
 }

@@ -1,7 +1,0 @@
-[02/11/22 07:23:49] ERROR #200: Could not find the automobile text file
-[02/11/22 07:24:44] WARNING #102: Missing name attribute for option in the automobile text file
-[02/11/22 07:24:44] WARNING #102: Missing name attribute for option in the automobile text file
-[02/11/22 07:24:44] WARNING #102: Missing name attribute for option in the automobile text file
-[02/11/22 07:24:44] ERROR #500: Automobile added conficts with another automobile
-[02/11/22 07:24:44] ERROR #500: Automobile added conficts with another automobile
-[02/11/22 07:24:44] ERROR #800: Index out of bounds for option set option choice

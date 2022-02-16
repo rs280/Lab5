@@ -1,3 +1,6 @@
+/**
+ * external API to give to our clients like Toyota, Ford, and Honda.
+ */
 package adapter;
 
 public interface UpdateAuto {

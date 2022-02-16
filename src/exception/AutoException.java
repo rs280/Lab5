@@ -35,6 +35,8 @@ public class AutoException extends Exception {
 		errorMessageTable.put(101, "Missing options attribute for option set in the automobile text file");
 		errorMessageTable.put(102, "Missing name attribute for option in the automobile text file");
 		errorMessageTable.put(103, "Missing price attribute for option in the automobile text file");
+		errorMessageTable.put(104, "option set name is reserved");
+		errorMessageTable.put(105, "option set option price could not be parsed");
 
 		errorMessageTable.put(200, "Could not find the automobile text file");
 		errorMessageTable.put(201, "IO problem in automobile text file");
@@ -46,10 +48,14 @@ public class AutoException extends Exception {
 		errorMessageTable.put(401, "IO problem deserializing automobile");
 
 		errorMessageTable.put(500, "Automobile added conficts with another automobile");
+		errorMessageTable.put(501, "Automobile could not be added to database");
+		errorMessageTable.put(502, "Automobile could not be found in database");
+		errorMessageTable.put(503, "Automobile database not instantiated");
 
 		errorMessageTable.put(600, "automobile is a null pointer");
 		errorMessageTable.put(601, "option set is a null pointer");
 		errorMessageTable.put(602, "option is a null pointer");
+		errorMessageTable.put(603, "could not get option set");
 
 		errorMessageTable.put(700, "Missing make field in the automobile text file");
 		errorMessageTable.put(701, "Missing model field in the automobile text file");
@@ -67,6 +73,10 @@ public class AutoException extends Exception {
 		errorMessageTable.put(801, "Null pointer exception for option set option choice");
 		errorMessageTable.put(802, "Name empty for option set name");
 		errorMessageTable.put(803, "Index out of bounds for option set option");
+		
+		errorMessageTable.put(900, "Could not find the automobile properties file");
+		errorMessageTable.put(901, "Could not parse automobile properties file");
+		errorMessageTable.put(902, "Could not close automobile properties file");
 	}
 
 	/* unknown exception */
@@ -106,6 +116,10 @@ public class AutoException extends Exception {
 	 */
 	public void setAutomobile(model.Automobile automobileObject_) {
 		automobileObject = automobileObject_;
+	}
+	
+	public String getMessage() {
+		return this.errorMessage;
 	}
 
 	/*

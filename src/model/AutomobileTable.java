@@ -25,28 +25,48 @@ public class AutomobileTable {
 
 	/** get the hash table key for an automobile object. \n
 	 * key is a combination of Make, Model, and Year.
-	 * @return the key string **/
-	public String getKey(Automobile automobileObject) {
+	 * @return the key string
+	 * @throws AutoException **/
+	public String getKey(Automobile automobileObject) throws AutoException {
+		if (automobileObject == null)
+			// Automobile could not be found in database
+			throw new exception.AutoException(502);
 		return automobileObject.getMake() + "-" + automobileObject.getModel() + "-" + automobileObject.getYear();
 	}
 
-	/** Inserts an automobile into the hash table. Overwrites existing Automobiles
+	public Map<String, Automobile> getMap() {
+		return automobileTable;
+	}
+
+	/** Inserts an automobile into the hash table. Overwrites existing
+	 * Automobiles
 	 * with the same Make, Model, and Year.
 	 * @return the key in the hash table **/
-	public String insertOverwrite(Automobile automobileObject) {
+	public String insertOverwrite(Automobile automobileObject) throws AutoException {
 		/* key = Make-Model-Year */
-		String automobileKey = getKey(automobileObject);
-		automobileTable.put(automobileKey, automobileObject);
+		String automobileKey = null;
+		try {
+			automobileKey = getKey(automobileObject);
+			automobileTable.put(automobileKey, automobileObject);
+		} catch (NullPointerException e) {
+			// Automobile could not be added to database
+			throw new exception.AutoException(501);
+		} catch (Exception e) {
+			// Automobile could not be added to database
+			throw new exception.AutoException(501);
+		}
 		return automobileKey;
 	}
 
-	/** Inserts an automobile into the hash table. If an automobile with the same
+	/** Inserts an automobile into the hash table. If an automobile with the
+	 * same
 	 * key exists then the exception fixString() method is used to correct it.
 	 * @return the key in the hash table **/
-	public String insertWrapper(Automobile automobileObject) {
+	public String insertWrapper(Automobile automobileObject) throws AutoException {
 		/* key = Make-Model-Year */
 		int tryNumber = 1;
-		String automobileKey = getKey(automobileObject);
+		String automobileKey = null;
+		automobileKey = getKey(automobileObject);
 		// self-healing
 		while (tryNumber > 0) {
 			try {

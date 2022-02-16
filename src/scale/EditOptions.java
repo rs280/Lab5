@@ -1,6 +1,6 @@
 package scale;
 
-import adapter.*;
+import adapter.BuildAuto;
 
 /*
  * Takes some design from Hello.java
@@ -51,7 +51,6 @@ public class EditOptions extends Thread {
 				proxyAutomobile.setOptionChoice(inputArguments[0], inputArguments[1], inputArguments[2]);
 			}
 			break;
-		
 		}
 
 		System.out.println("Stopping thread " + threadNumber);

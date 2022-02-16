@@ -2,15 +2,21 @@ package adapter;
 
 import model.*;
 import scale.EditOptions;
+
+import java.io.*;
+import java.util.*;
+
 import exception.*;
 
 public abstract class ProxyAutomobile {
 	private static model.AutomobileTable automobileTable;
 	private static int threadNumber; // keep track of thread numbers
-	private util.FileIO autoutil;
+	private util.FileIO fileIOUtil;
+	private util.StreamIO streamIOUtil;
 
 	protected ProxyAutomobile() {
-		autoutil = new util.FileIO();
+		fileIOUtil = new util.FileIO();
+		streamIOUtil = new util.StreamIO();
 	}
 
 	public void init() {
@@ -51,17 +57,32 @@ public abstract class ProxyAutomobile {
 	}
 
 	/* CreateAuto Implementation */
-	public String buildAuto(String filename) {
-		String returnValue = null;
+	/** builds the Automobile object from a configuration file
+	 * @param fileName The file name
+	 * @param fileType the file type
+	 *            choices: text, property
+	 * @return Automobile Key on success, and null on failure */
+	public String buildAuto(String fileName, String fileType) {
+		String automobileKey = null;
 		model.Automobile automobileObject = new model.Automobile();
-		try {
-			autoutil.read(filename, automobileObject);
-			returnValue = automobileTable.insertWrapper(automobileObject);
-		} catch (exception.AutoException e) {
-			// double check that return value is null
-			returnValue = null;
+		if (fileType.equals("text")) {
+			// fileType = text
+			try {
+				fileIOUtil.addToAutomobile(fileName, automobileObject);
+				automobileKey = automobileTable.insertWrapper(automobileObject);
+			} catch (exception.AutoException e) {
+				// return already null
+			}
+		} else if (fileType.equals("property")) {
+			// fileType = property
+			try {
+				streamIOUtil.propertiesToAutomobile(streamIOUtil.fileToProperties(fileName), automobileObject);
+				automobileKey = automobileTable.insertWrapper(automobileObject);
+			} catch (exception.AutoException e) {
+				// return already null
+			}
 		}
-		return returnValue;
+		return automobileKey;
 	}
 
 	public boolean printAuto(String automobileKey) {
@@ -79,7 +100,7 @@ public abstract class ProxyAutomobile {
 		model.Automobile automobileObject;
 		try {
 			automobileObject = automobileTable.getByKey(automobileKey);
-			autoutil.serialize(fileName, automobileObject);
+			fileIOUtil.serialize(fileName, automobileObject);
 			returnValue = true;
 		} catch (exception.AutoException e) {
 			// nothing
@@ -94,11 +115,12 @@ public abstract class ProxyAutomobile {
 
 	public String deserialize(String fileName) {
 		String returnValue = null;
-		model.Automobile automobileObject = autoutil.deserialize(fileName);
-		if (automobileObject != null) {
-			System.out.println("Deserialized data read from " + fileName);
+		model.Automobile automobileObject;
+		try {
+			automobileObject = fileIOUtil.deserialize(fileName);
 			returnValue = automobileTable.insertWrapper(automobileObject);
-		} else {
+			System.out.println("Deserialized data read from " + fileName);
+		} catch (AutoException e) {
 			System.out.println("Automobile could not be deserialized");
 		}
 		return returnValue;
@@ -138,11 +160,43 @@ public abstract class ProxyAutomobile {
 
 	/* scale.Scaleable Implementation */
 	public void operation(int operationNumber, String[] inputArguments) {
-		/*
-		 * scale.EditOptions mimics Hello.java
-		 * It contains a switching statement to delegate the operation number
-		 */
+		/* scale.EditOptions mimics Hello.java
+		 * It contains a switching statement to delegate the operation number */
 		EditOptions editObtionsObject = new scale.EditOptions(this, operationNumber, threadNumber++, inputArguments);
 		editObtionsObject.start();
+	}
+
+	/* Assignment 5
+	 * 6/12/2018
+	 * server.AutoServer Implementation */
+	public String buildAutomobileFromProperties(Properties automobileProperties) throws exception.AutoException {
+		String automobileKey = null;
+		model.Automobile automobileObject = new model.Automobile();
+		streamIOUtil.propertiesToAutomobile(automobileProperties, automobileObject);
+		automobileKey = automobileTable.insertOverwrite(automobileObject);
+		return automobileKey;
+	}
+
+	public Properties propertiesFromStream(InputStream socketStreamIn) throws exception.AutoException {
+		return streamIOUtil.deserializeToStream(socketStreamIn);
+	}
+
+	public String automobileFromStream(InputStream socketStreamIn) throws exception.AutoException {
+		return automobileTable.insertOverwrite(fileIOUtil.deserializeFromStream(socketStreamIn));
+	}
+
+	public void automobileToStream(OutputStream socketStreamOut, String automobileKey) throws exception.AutoException {
+		fileIOUtil.serializeToStream(socketStreamOut, automobileTable.getByKey(automobileKey));
+	}
+
+	public String getAutomobileList() {
+		StringBuffer listString = new StringBuffer();
+		for (Map.Entry<String, Automobile> entry : automobileTable.getMap().entrySet()) {
+			// assuming nothing is null (for performance)
+			listString.append("Car ID: ").append(entry.getKey()).append("\tName=").append(entry.getValue().getYear());
+			listString.append(" ").append(entry.getValue().getMake()).append(" ").append(entry.getValue().getModel());
+			listString.append("\tRetail Price=$").append(entry.getValue().getPrice()).append("\n");
+		}
+		return listString.toString();
 	}
 }

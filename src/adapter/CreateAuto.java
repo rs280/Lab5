@@ -1,11 +1,14 @@
+/**
+ * external API to give to our clients like Toyota, Ford, and Honda.
+ */
 package adapter;
 
-import scale.Scaleable;
+public interface CreateAuto {
+	public String buildAuto(String fileName, String fileType);
 
-/*
- * Assignment 4: we have added the scale package
- * which contains an interface Scaleable
- */
-public class CreateAuto extends ProxyAutomobile implements BuildAuto, UpdateAuto, ChooseAuto, scale.Scaleable {
+	public boolean printAuto(String automobileKey);
 
+	public boolean serialize(String automobileKey, String fileName);
+
+	public String deserialize(String fileName);
 }

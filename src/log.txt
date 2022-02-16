@@ -1,0 +1,16 @@
+[02/11/22 19:37:57] WARNING #102: Missing name attribute for option in the automobile text file
+[02/11/22 19:37:57] WARNING #102: Missing name attribute for option in the automobile text file
+[02/11/22 19:37:57] WARNING #102: Missing name attribute for option in the automobile text file
+[02/11/22 19:41:36] ERROR #300: IO problem serializing automobile
+[02/11/22 19:41:36] ERROR #300: IO problem serializing automobile
+[02/11/22 19:42:08] ERROR #300: IO problem serializing automobile
+[02/11/22 19:42:08] ERROR #300: IO problem serializing automobile
+[02/14/22 20:47:51] ERROR #300: IO problem serializing automobile
+[02/14/22 20:47:51] ERROR #300: IO problem serializing automobile
+[02/14/22 22:09:37] ERROR #300: IO problem serializing automobile
+[02/14/22 22:09:38] ERROR #300: IO problem serializing automobile
+[02/15/22 08:27:40] ERROR #300: IO problem serializing automobile
+[02/15/22 08:27:40] ERROR #300: IO problem serializing automobile
+[02/15/22 21:41:20] WARNING #102: Missing name attribute for option in the automobile text file
+[02/15/22 21:41:20] WARNING #102: Missing name attribute for option in the automobile text file
+[02/15/22 21:41:20] WARNING #102: Missing name attribute for option in the automobile text file

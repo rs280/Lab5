@@ -1,3 +1,4 @@
+
 package model;
 
 import java.lang.ArrayIndexOutOfBoundsException;
@@ -71,12 +72,15 @@ public class Automobile implements java.io.Serializable {
 		OptionSet optionSetObject = null;
 		try {
 			optionSetObject = optionSetList.get(OptionSetIndex);
+		} catch (NullPointerException e) {
+			System.out.println("Intentional NullPointerExceptionn from getOptionSet");
+			e.printStackTrace();
 		} catch (ArrayIndexOutOfBoundsException e) {
 			System.out.println("Intentional ArrayIndexOutOfBoundsException from getOptionSet");
-			//e.printStackTrace();
+			e.printStackTrace();
 		} catch (Exception e) {
 			System.out.println("Intentional Exception from getOptionSet");
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 		return optionSetObject;
 	}
@@ -127,7 +131,7 @@ public class Automobile implements java.io.Serializable {
 	 * @param optionSetIndex optionSet index
 	 * @return null if not found and option object if found */
 	private synchronized Option getOptionSetChoiceByIndex(int optionSetIndex) throws AutoException {
-		 Option returnValue = null;
+		Option returnValue = null;
 		int optionIndex;
 		try {
 			optionIndex = optionSetOptionChoice.get(optionSetIndex).intValue();

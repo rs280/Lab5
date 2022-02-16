@@ -1,6 +1,5 @@
 package model;
 
-
 public class Option implements java.io.Serializable {
     private static final long serialVersionUID = 2272307185575003314L;
     private String optionName;
@@ -47,5 +46,4 @@ public class Option implements java.io.Serializable {
         return stringBufferObject.toString();
     }
 }
-
 
