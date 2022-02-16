@@ -1,6 +1,6 @@
 package scale;
 
-import adapter.BuildAuto;
+import adapter.*;
 
 /*
  * Takes some design from Hello.java
