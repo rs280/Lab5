@@ -139,4 +139,25 @@ int operationNumber
 int threadNumber adapter.ProxyAutomobile proxyAutomobile String[] inputArguments
 --
 EditOptions(adapter.ProxyAutomobile proxyAutomobile_, int operationNumber_, int threadNumber_, String[] inputArguments_) 
-void run()</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+void run()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1020</x><y>110</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::FatClass
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1300</x><y>130</y><w>210</w><h>190</h></coordinates><panel_attributes>Server.
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
