@@ -1,0 +1,12 @@
+Make: Toyota
+Model: Camry L
+Year: 2020
+Type: Sedan
+Engine: Front-Wheel Drive /0, All-Wheel Drive /2000
+Retail Price: 24425
+Color: Midnight Black Metallic /0, White /0, Celestial Silver Metallic /0, Predawn Gray Mica /0, Blueprint /0, Ruby Flare Pearl /425
+Interior: Ash Fabric /0, Black Fabric /0, Macadamia Fabric /0
+Packages: Blind Spot Monitor /680, Blind Spot Monitor with Options /1280, Cold Weather Package /1290, Cold Weather Package with Options /1890,
+Slide Moonroof with Options /2150, Cold Weather Package with More Options / 2760, Audio Upgrade Package with Options /3140, Cold Weather Maximum Package /3750
+Accesories: Alloy Wheel Locks /75, Cargo Tote /51, Cargo Tray /0, Carpet Floor Mats /169, Carpet Mat Package /259, 
+Carpet Trunk Mat /90, Coin Holder /29, Door Edge Guards /129, Dual USB Powe Ports /129

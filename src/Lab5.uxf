@@ -1,0 +1,273 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>223</x><y>50</y><w>120</w><h>50</h></coordinates><panel_attributes>UML Class Diagram 
+Lab 5
+Rishabh Sahoo
+Car Rental Application</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>362</x><y>0</y><w>210</w><h>50</h></coordinates><panel_attributes>Car Rental Application::Driver
+--
+--
+main(String[] args</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>433</x><y>43</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>363</x><y>83</y><w>210</w><h>40</h></coordinates><panel_attributes>adapter::CreateAuto
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>423</x><y>113</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>183</x><y>173</y><w>600</w><h>210</h></coordinates><panel_attributes>adapter.ProxyAutomobile
+--
+model.AutomobileTable automobileTable; 
+util.FileIO autoutil;
+--
+ProxyAutomobile()
+boolean updateOptionSetName(String automobileKey, String optionSetName, String nameNew)
+boolean updateOptionPrice(String automobileKey, String optionSetName, String optionName, double priceNew) String buildAuto(String filename)
+boolean printAuto(String automobileKey)
+boolean serialize(String automobileKey, String fileName)
+String deserialize(String fileName)
+boolean setOptionChoice(String automobileKey, String optionSetName, String optionName)
+public String getOptionChoice(String automobileKey, String optionSetName)
+public Double getOptionChoicePrice(String automobileKey, String optionSetName)
+public void operation(int operationNumber, String[] inputArguments)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>763</x><y>400</y><w>440</w><h>190</h></coordinates><panel_attributes>model.AutomobileTable
+--
+Map&lt;String, Automobile&gt; automobileTable
+--
+AutomobileTable()
+AutomobileTable(int capacitySize)
+Automobile getByKey(String automobileKey)
+String getKey(Automobile automobileObject)
+String insertOverwrite(Automobile automobileObject 
+String insertWrapper(Automobile automobileObject)
+ boolean insert(String automobileKey,Automobile automobileObject) 
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>420</y><w>570</w><h>120</h></coordinates><panel_attributes>util.FileIO
+--
+--
+void read(String fileName, Automobile autoObj)
+boolean optionSetOptionsProcess(Automobile autoObj, int optionSetObjectIndex, String optionSetOptions) 
+void serialize(String fileName, Automobile autoObj)
+Automobile deserialize(String fileName)
+void print()
+String toString()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>63</x><y>650</y><w>230</w><h>120</h></coordinates><panel_attributes>exception.AutoException
+--
+Map&lt;Integer, String&gt; errorMessageTable;
+int errorNumber;
+String errorMessage;
+model.Automobile automobileObject;
+--
+AutoException(int errorNumber_) 
+String fixString(int errorNumber)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>820</y><w>290</w><h>50</h></coordinates><panel_attributes>exception.FixAutomobileTable
+--
+--
+String code500(model.Automobile automobileObject)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>910</y><w>130</w><h>80</h></coordinates><panel_attributes>exception.Log
+--
+PrintWriter writer
+--
+void error(String str) 
+void warning(String str)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>640</y><w>520</w><h>670</h></coordinates><panel_attributes>model.Automobile
+--
+static final long serialVersionUID 
+String makeName
+String modelName
+String year
+double basePrice
+ArrayList&lt;OptionSet&gt; optionSetList 
+ArrayList&lt;Integer&gt; optionSetOptionChoice 
+ArrayList&lt;String&gt; optionSetNameReserved
+--
+Automobile()
+Automobile(int size)
+void init()
+String getMake()
+String getModel()
+String getYear()
+double getPrice()
+OptionSet getOptionSet(int OptionSetIndex)
+int length()
+String getOptionSetChoiceName(String optionSetName)
+Double getOptionSetChoicePrice(String optionSetName)
+OptionSet.Option getOptionSetChoiceByIndex(int optionSetIndex)
+String getOptionSetOptionName(String optionSetName, String optionName)
+Double getOptionSetOptionPrice(String optionSetName, String optionName)
+boolean isOptionSetReserved(OptionSet optionSetObject)
+boolean isOptionSetNameReserved(String optionSetName)
+OptionSet findOptionSet(String optionSetName)
+OptionSet.Option findOptionSetOption(int OptionSetIndex, String optionName)
+int findOptionSetIndex(String optionSetName)
+int findOptionSetOptionIndex(int OptionSetIndex, String optionName)
+int addOptionSet(String OptionSetName)
+int addOptionSetOption(int optionSetIndex, String optionName, double optionPrice)
+void setMake(String name)
+void setModel(String name)
+void setYear(String name)
+void setPrice(double price_)
+boolean setOptionSetName(String optionSetName, String nameNew)
+boolean setOptionSetOptionNameReserved(String optionSetName, String optionName) 
+boolean setOptionSetOptionName(String optionSetName, String optionName, String nameNew)
+boolean setOptionSetOptionPrice(String optionSetName, String optionName, double priceNew) 
+boolean setOptionSetChoiceByIndex(int optionSetIndex, int optionIndex)
+boolean setOptionSetChoice(String optionSetName, String optionName)
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>970</x><y>670</y><w>300</w><h>240</h></coordinates><panel_attributes>model.Automobile.OptionSet
+--
+static final long serialVersionUID 
+ArrayList&lt;Option&gt; optionList
+ String optionSetName
+--
+ptionSet()
+OptionSet(String name, int size)
+void init()
+String getName()
+Option getOption(int optionIndex)
+int length()
+Option findOption(String optionName)
+int findOptionIndex(String optionName) 
+void setName(String name)
+int addOption(String optionName, double optionPrice)
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>990</x><y>990</y><w>210</w><h>200</h></coordinates><panel_attributes>model.Automobile.OptionSet.Option
+--
+static final long serialVersionUID 
+String optionName
+double price
+--
+Option()
+Option(String name, double price_) 
+String getName()
+double getPrice()
+void setName(String name)
+void setPrice(double price_)
+void print()
+String toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>370</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>770</x><y>370</y><w>90</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>70;30;10;13</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>370</y><w>80</w><h>290</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;270;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>881</x><y>757</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1101</x><y>899</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>707</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>757</y><w>50</w><h>170</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>30;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>757</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>532</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>532</y><w>110</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;108;90;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2640</x><y>580</y><w>680</w><h>160</h></coordinates><panel_attributes>scale.EditOptions extends Thread
+--
+String automobileKey
+String optionSetName
+String optionName
+String optionNameNew
+int operationNumber
+int threadNumber adapter.ProxyAutomobile proxyAutomobile String[] inputArguments 
+--
+EditOptions(adapter.ProxyAutomobile proxyAutomobile_, int operationNumber_, int threadNumber_, String[] inputArguments_) 
+void run()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1320</x><y>90</y><w>250</w><h>260</h></coordinates><panel_attributes>server.DefaultSocketServer
+--
+BufferedReader reader; 
+BufferedWriter writer; 
+ServerSocket sock; 
+Socket sockClient; 
+String strHost;
+int iPort;
+boolean listening;
+BuildAuto buildAutoInterface;
+--
+DefaultSocketServer(String strHost, int iPort) 
+void run()
+boolean listen()
+void close()
+void setHost(String strHost) 
+void setPort(int iPort)
+void main(String arg[])
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1630</x><y>70</y><w>210</w><h>90</h></coordinates><panel_attributes>server.SocketClientInterface
+--
+--
+boolean openConnection() 
+void handleSession()
+void closeSession()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1640</x><y>170</y><w>170</w><h>100</h></coordinates><panel_attributes>server.SocketServerConstants
+--
+-nt iECHO_PORT
+int iDAYTIME_PORT
+int iSMTP_PORT
+boolean DEBUG
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1553</x><y>125</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1563</x><y>205</y><w>100</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1330</x><y>390</y><w>600</w><h>240</h></coordinates><panel_attributes>server.SocketClientHandler extends Thread
+--
+BufferedReader reader;
+BufferedWriter writer;
+Socket socketClient; 
+DefaultSocketServer socketServer; 
+String strHost;
+int iPort;
+BuildAuto buildAutoInterface
+--
+SocketClientHandler(Socket socketClient_, DefaultSocketServer socketServer_, BuildAuto buildAutoInterface_) 
+void run()
+boolean openConnection()
+void handleSession()
+void sendOutput(String strOutput) 
+void handleInput(String strInput) 
+void closeSession()
+void closeServer()
+void setHost(String strHost)
+void setPort(int iPort) </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1425</x><y>342</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1960</x><y>390</y><w>160</w><h>100</h></coordinates><panel_attributes>server.SocketClientConstant
+--
+int iECHO_PORT
+int iDAYTIME_PORT 
+int iSMTP_PORT 
+boolean DEBU
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1960</x><y>500</y><w>160</w><h>70</h></coordinates><panel_attributes>server.SocketClientInterface
+--
+--
+boolean listen() 
+void close()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1923</x><y>430</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1923</x><y>520</y><w>60</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1950</x><y>50</y><w>370</w><h>300</h></coordinates><panel_attributes>server.DefaultSocketClient extends Thread
+--
+BufferedReader stdIn
+Socket socketClient
+InputStream socketClientInputStream 
+OutputStream socketClientOutputStream 
+BufferedReader reader
+BufferedWriter writer
+String strHost
+int iPort
+CarModelOptionsIO carOptionsMenu
+--
+DefaultSocketClient(String strHost, int iPort, BufferedReader stdIn_) 
+void run()
+boolean openConnection()
+void handleSession()
+void sendOutput(String strOutput) 
+void handleInput(String strInput) void closeSession()
+void setHost(String strHost)
+void setPort(int iPort) 
+void main(String arg[])</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2370</x><y>60</y><w>210</w><h>100</h></coordinates><panel_attributes>server.SocketClientConstant
+--
+nt iECHO_PORT
+int iDAYTIME_PORT 
+int iSMTP_PORT 
+boolean DEBUG
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>2370</x><y>190</y><w>210</w><h>80</h></coordinates><panel_attributes>server.SocketClientInterface
+--
+--
+boolean openConnection() 
+void handleSession()
+void closeSession()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2310</x><y>110</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>2310</x><y>220</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1558</x><y>286</y><w>410</w><h>40</h></coordinates><panel_attributes>lt=-&gt;&gt;
+ Socket Request</panel_attributes><additional_attributes>390;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1558</x><y>306</y><w>410</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;-
+
+Socket Response </panel_attributes><additional_attributes>390;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2150</x><y>430</y><w>270</w><h>260</h></coordinates><panel_attributes>server.CarModelOptionsIO
+--
+private util.StreamIO streamIOUtil;
+private util.FileIO fileIOUtil;
+private BufferedReader stdIn;
+private InputStream socketClientInputStream;
+private OutputStream socketClientOutputStream;
+private BufferedReader reader;
+private BufferedWriter writer;
+-
+CarModelOptionsIO(BufferedReader stdIn_) 
+void displayMenu()
+void displayMenu1()
+void displayMenu2()
+void displayMenu3()
+boolean getMenuOption(String inputString) 
+void openConnection(InputStream socketClient 
+void sendOutput(String strOutput)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2217</x><y>340</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>2050</x><y>770</y><w>430</w><h>100</h></coordinates><panel_attributes>server.SelectCarOption
+--
+BufferedReader stdIn; 
+model.Automobile automobileObject;
+--
+SelectCarOption(BufferedReader stdIn_, model.Automobile automobileObject_)
+ void beginSelection()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>2277</x><y>686</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1040</x><y>1230</y><w>620</w><h>130</h></coordinates><panel_attributes>server.AutoServer
+--
+
+--
+String buildAutomobileFromProperties(Properties automobileProperties) throws exception.AutoException 
+Properties propertiesFromStream(InputStream socketStreamIn) throws exception.AutoException
+String automobileFromStream(InputStream socketStreamIn) throws exception.AutoException
+void automobileToStream(OutputStream socketStreamOut, String automobileKey) throws exception.AutoException 
+String getAutomobileList()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>879</x><y>863</y><w>1420</w><h>370</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;350;1400;350;1400;10</additional_attributes></element><element><id>Relation</id><coordinates><x>881</x><y>1218</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=.&gt;
+implements</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>875</x><y>624</y><w>680</w><h>600</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;570;630;580;660;10</additional_attributes></element></diagram>

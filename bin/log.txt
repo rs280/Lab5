@@ -28,3 +28,6 @@
 [02/16/22 07:21:40] WARNING #102: Missing name attribute for option in the automobile text file
 [02/16/22 07:22:02] ERROR #300: IO problem serializing automobile
 [02/16/22 07:22:02] ERROR #300: IO problem serializing automobile
+[02/16/22 07:30:27] WARNING #102: Missing name attribute for option in the automobile text file
+[02/16/22 07:30:27] WARNING #102: Missing name attribute for option in the automobile text file
+[02/16/22 07:30:27] WARNING #102: Missing name attribute for option in the automobile text file
